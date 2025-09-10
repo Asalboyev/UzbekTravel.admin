@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "d5100105-14be-40a9-b070-acce2e91120b",
+		"name": "UZ KOR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27790231",
+		"_collection_link": "https://universal-zodiac-861006.postman.co/workspace/Team-Workspace~cb07a86e-4681-4ea1-877b-71695bb837e6/collection/27790231-d5100105-14be-40a9-b070-acce2e91120b?action=share&source=collection_link&creator=27790231"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "services",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "posts inner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/posts/slug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"slug"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "services",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/services",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "services inner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/services/slug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"services",
+								"slug"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "teams",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/teams",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "teamsinner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/teams/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"teams",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Feedbacks",
+			"item": [
+				{
+					"name": "feedbacks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/feedbacks",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"feedbacks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "feedbacks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/feedbacks/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"feedbacks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vacancies",
+			"item": [
+				{
+					"name": "vacancies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/vacancies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vacancies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vacancies inner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/vacancies/slug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"vacancies",
+								"slug"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts Categories",
+			"item": [
+				{
+					"name": "categoriies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ru",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/categories",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category inner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categories/slug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"slug"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/categories/filter/slug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"categories",
+								"filter",
+								"slug"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "en",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "uz",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "prodcut inner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/product/slug",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"product",
+								"slug"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SiteInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/siteinfo",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"siteinfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "ru",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/translations",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"translations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "name",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "phone_number",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "message",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "qwqw",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "21",
+							"type": "text"
+						},
+						{
+							"key": "message",
+							"value": "ewee",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://timeedu.test/api/contacts",
+					"protocol": "https",
+					"host": [
+						"timeedu",
+						"test"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Settings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/settings",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Langs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/langs",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"langs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Banners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/banners",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"banners"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://web.mediaprint.uz/api",
+			"type": "string"
+		}
+	]
+}
