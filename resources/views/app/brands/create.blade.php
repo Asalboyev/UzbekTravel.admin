@@ -132,15 +132,15 @@
                                     </div>
                                     @endforeach
                                 </div>
-{{--                                <div class="form-group">--}}
-{{--                                    <label for="title" class="form-label required">URL-адрес</label>--}}
-{{--                                    <input type="text"  class="form-control @error('title') is-invalid @enderror" name="url" value="{{ old('url') }}" id="title" placeholder="URL-адрес...">--}}
-{{--                                    @error('title')--}}
-{{--                                    <span class="invalid-feedback" role="alert">--}}
-{{--                                        <strong>{{ $message }}</strong>--}}
-{{--                                    </span>--}}
-{{--                                    @enderror--}}
-{{--                                </div>--}}
+                                <div class="form-group">
+                                    <label for="title" class="form-label required">URL-адрес</label>
+                                    <input type="text"  class="form-control @error('title') is-invalid @enderror" name="url" value="{{ old('url') }}" id="title" placeholder="URL-адрес...">
+                                    @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
                                 <div class="form-group">
                                     <!-- Dropzone -->
                                     <label for="dropzone" class="form-label">Лого</label>

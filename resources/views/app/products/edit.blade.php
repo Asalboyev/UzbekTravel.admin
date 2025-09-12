@@ -157,6 +157,33 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
+                                                <label for="title" class="form-label {{ $lang->code == $main_lang->code ? 'required' : '' }}">Продолжительность</label>
+                                                <input type="text"  class="form-control @error('date.'.$lang->code) is-invalid @enderror" name="date[{{ $lang->code }}]" value="{{ old('date.'.$lang->code) ?? $product->date[$lang->code] ?? null }}" id="date" placeholder="Продолжительность...">
+                                                @error('date.'.$lang->code)
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="title" class="form-label {{ $lang->code == $main_lang->code ? 'required' : '' }}">Размер группы</label>
+                                                <input type="text"  class="form-control @error('title.'.$lang->code) is-invalid @enderror" name="title[{{ $lang->code }}]" value="{{ old('groupsize.'.$lang->code) ?? $product->groupsize[$lang->code] ?? null }}" id="groupsize" placeholder="Размер группы...">
+                                                @error('groupsize.'.$lang->code)
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="title" class="form-label {{ $lang->code == $main_lang->code ? 'required' : '' }}">Язык</label>
+                                                <input type="text"  class="form-control @error('language.'.$lang->code) is-invalid @enderror" name="language[{{ $lang->code }}]" value="{{ old('language.'.$lang->code) ?? $product->language[$lang->code] ?? null }}" id="title" placeholder="Язык...">
+                                                @error('language.'.$lang->code)
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
                                                 <label for="meta_desc" class="form-label">Meta Описание</label>
                                                 <textarea id="meta_desc" cols="4" rows="4" class="form-control @error('meta_desc.'.$lang->code) is-invalid @enderror" name="meta_desc[{{ $lang->code }}]">{{ old('meta_desc.'.$lang->code) ?? $product->meta_desc[$lang->code] ?? null }}</textarea>
                                                 @error('meta_desc.'.$lang->code)
@@ -176,6 +203,7 @@
                                             </div>
                                         </div>
                                         @endforeach
+
                                     </div>
                                 </div>
                             </div>
@@ -197,11 +225,34 @@
                                 <div class="form-group">
                                     <label for="menu_id" class="form-label">Status</label>
                                     <select name="status" class="form-select">
-                                        <option value="1" {{ $product->status == 1 ? 'selected' : '' }}>Active</option>
-                                        <option value="0" {{ $product->status == 0 ? 'selected' : '' }}>NeActive</option>
+                                        <option value="1" {{ $product->status == 1 ? 'selected' : '' }}>Uzbekistan Tours</option>
+                                        <option value="0" {{ $product->status == 0 ? 'selected' : '' }}>International</option>
                                     </select>
 
                                 </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <!-- Agar tanlanmasa ham 0 yuboriladi -->
+                                        <input type="hidden" name="info" value="0">
+
+                                        <!-- Agar tanlansa 1 yuboriladi -->
+                                        <input class="form-check-input" type="checkbox"
+                                               name="info" value="1" id="invalidCheck3"
+                                            {{ old('status', $product->info ?? 0) == 1 ? 'checked' : '' }}>
+
+                                        <label class="form-check-label" for="invalidCheck3">
+                                            Лучший тур
+                                        </label>
+
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <label for="menu_id" class="form-label">Цена</label>
+                                    <input type="text" class="form-control mb-3" placeholder="$0.00" name="price" value="{{$product->price}}" data-inputmask="'alias': 'currency', 'numericInput': 'true', 'prefix': '$'" inputmode="decimal">
+                                </div>
+
                                 <div class="form-group">
                                     <!-- Dropzone -->
                                     <label for="dropzone" class="form-label">Пост</label>

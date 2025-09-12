@@ -14,6 +14,7 @@ class Feedback extends Model
         'logo',
         'file',
         'position',
+        'product_id',
         'feedback',
         'img',
         'video',
@@ -27,6 +28,10 @@ class Feedback extends Model
     ];
 
 
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 
     protected $appends = [
         'lg_img',

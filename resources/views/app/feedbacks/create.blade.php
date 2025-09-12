@@ -166,54 +166,20 @@
                     <div class="card-body">
                         @csrf
                         <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="video" class="form-label">PDF файл</label>
-                                    <input type="file" class="form-control @error('video') is-invalid @enderror" name="video" id="video">
-                                    @error('video')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="img" class="form-label">Tender файл</label>
-                                    <input type="file" class="form-control @error('img') is-invalid @enderror" name="file" id="img">
-                                    @error('img')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="logo" class="form-label">DOC файл</label>
-                                    <input type="file" class="form-control @error('logo') is-invalid @enderror" name="logo" id="logo">
-                                    @error('logo')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="youtube_link" class="form-label">Дата начала</label>
-                                    <input type="text" class="form-control @error('youtube_link') is-invalid @enderror" name="youtube_link" value="{{ old('youtube_link') }}" id="youtube_link" placeholder="{{ date('d-m-Y') }}" data-flatpickr='{"dateFormat": "d-m-Y"}'>
-                                    @error('youtube_link')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <label for="link" class="form-label">Крайний срок</label>
-                                    <input type="text" class="form-control @error('link') is-invalid @enderror" name="link" value="{{ old('link') }}" id="link" placeholder="{{ date('d-m-Y') }}" data-flatpickr='{"dateFormat": "d-m-Y"}'>
-                                    @error('link')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
+                            <div class="col-10">
+                                <select class="form-control  is-invalid "  name="product_id">
+                                    <option>NULL</option>
+                                    @foreach($products as $product)
+                                    <option value="{{$product->id}}">{{$product->title['uz']}}</option>
+                                    @endforeach
+                                </select>
+                                @error('categories')
+                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                @enderror
                             </div>
+
                         </div>
                     </div>
                 </div>

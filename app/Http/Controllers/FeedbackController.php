@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
@@ -42,12 +43,14 @@ class FeedbackController extends Controller
     public function create()
     {
         $langs = Lang::all();
+        $products = Product::all();
 
         return view('app.feedbacks.create', [
             'title' => $this->title,
             'route_name' => $this->route_name,
             'route_parameter' => $this->route_parameter,
-            'langs' => $langs
+            'langs' => $langs,
+            'products' => $products
         ]);
     }
 
@@ -122,12 +125,14 @@ class FeedbackController extends Controller
     public function edit(Feedback $feedback)
     {
         $langs = Lang::all();
+        $products = Product::all();
 
         return view('app.feedbacks.edit', [
             'title' => $this->title,
             'route_name' => $this->route_name,
             'route_parameter' => $this->route_parameter,
             'langs' => $langs,
+            'products' => $products,
             'feedback' => $feedback
         ]);
     }

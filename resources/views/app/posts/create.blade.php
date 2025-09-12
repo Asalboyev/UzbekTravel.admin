@@ -147,15 +147,15 @@
                                                 </span>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="subtitle" class="form-label">Подзаголовок</label>
-                                                <input type="text" class="form-control @error('subtitle.'.$lang->code) is-invalid @enderror" name="subtitle[{{ $lang->code }}]" value="{{ old('subtitle.'.$lang->code) }}" id="subtitle" placeholder="Подзаголовок...">
-                                                @error('subtitle.'.$lang->code)
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
+{{--                                            <div class="form-group">--}}
+{{--                                                <label for="subtitle" class="form-label">Дата</label>--}}
+{{--                                                <input type="text" class="form-control @error('subtitle.'.$lang->code) is-invalid @enderror" name="subtitle[{{ $lang->code }}]" value="{{ old('subtitle.'.$lang->code) }}" id="subtitle" placeholder="Дата...">--}}
+{{--                                                @error('subtitle.'.$lang->code)--}}
+{{--                                                <span class="invalid-feedback" role="alert">--}}
+{{--                                                    <strong>{{ $message }}</strong>--}}
+{{--                                                </span>--}}
+{{--                                                @enderror--}}
+{{--                                            </div>--}}
                                             <div class="form-group">
                                                 <label for="desc" class="form-label">Описание</label>
                                                 <textarea name="desc[{{ $lang->code }}]" id="desc" cols="30" rows="10" class="form-control @error('desc.'.$lang->code) is-invalid @enderror ckeditor" name="desc[{{ $lang->code }}]" placeholder="Описание...">{{ old('desc.'.$lang->code) }}</textarea>
@@ -190,19 +190,20 @@
                                     <label for="date" class="form-label">Дата</label>
                                     <input type="text" id="date" name="date" class="form-control" value="{{ old('date') }}" placeholder="{{ date('d-m-Y') }}" data-flatpickr='{"dateFormat": "d-m-Y"}' />
                                 </div>
-                                <div class="form-group">
-                                    <label for="categories" class="form-label">Категории</label>
-                                    <select class="form-control mb-4 @error('categories') is-invalid @enderror" data-choices='{"removeItemButton": true}' multiple name="categories[]">
-                                        @foreach ($all_categories as $key => $item)
-                                        <option value="{{ $item->id }}" {{ (old('categories') ? in_array($item->id, old('categories')) : '') ? 'selected' : '' }}>{{ $item->title[$main_lang->code] }}</option>
-                                        @endforeach
-                                    </select>
-                                    @error('categories')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
+{{--                                <div class="form-group">--}}
+{{--                                    <label for="categories" class="form-label">Категории</label>--}}
+{{--                                    <select class="form-control mb-4 @error('categories') is-invalid @enderror" data-choices='{"removeItemButton": true}' multiple name="categories[]">--}}
+{{--                                        @foreach ($all_categories as $key => $item)--}}
+{{--                                        <option value="{{ $item->id }}" {{ (old('categories') ? in_array($item->id, old('categories')) : '') ? 'selected' : '' }}>{{ $item->title[$main_lang->code] }}</option>--}}
+{{--                                        @endforeach--}}
+{{--                                    </select>--}}
+{{--                                    @error('categories')--}}
+{{--                                    <span class="invalid-feedback" role="alert">--}}
+{{--                                        <strong>{{ $message }}</strong>--}}
+{{--                                    </span>--}}
+{{--                                    @enderror--}}
+{{--                                </div>--}}
+
                                 <div class="form-group">
                                     <!-- Dropzone -->
                                     <label for="dropzone" class="form-label">Пост</label>

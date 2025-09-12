@@ -174,6 +174,89 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <label for="date" class="form-label {{ $lang->code == $main_lang->code ? 'required' : '' }}">Продолжительность</label>
+                                                </div>
+                                                <div class="col-10">
+                                                    <input type="text"  class="form-control @error('date.'.$lang->code) is-invalid @enderror" name="date[{{ $lang->code }}]" value="{{ old('date.'.$lang->code) }}" id="date" placeholder="Продолжительность...">
+                                                    @error('date.'.$lang->code)
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <label for="date" class="form-label {{ $lang->code == $main_lang->code ? 'required' : '' }}">Размер группы</label>
+                                                </div>
+                                                <div class="col-10">
+                                                    <input type="text"  class="form-control @error('groupsize.'.$lang->code) is-invalid @enderror" name="groupsize[{{ $lang->code }}]" value="{{ old('groupsize.'.$lang->code) }}" id="date" placeholder="Размер группы...">
+                                                    @error('groupsize.'.$lang->code)
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <label for="date" class="form-label {{ $lang->code == $main_lang->code ? 'required' : '' }}">Язык</label>
+                                                </div>
+                                                <div class="col-10">
+                                                    <input type="text"  class="form-control @error('language.'.$lang->code) is-invalid @enderror" name="language[{{ $lang->code }}]" value="{{ old('language.'.$lang->code) }}" id="date" placeholder="Язык:...">
+                                                    @error('language.'.$lang->code)
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <label for="meta_desc" class="form-label">Meta Описание</label>
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <textarea id="meta_desc" cols="4" rows="4" class="form-control @error('meta_desc.'.$lang->code) is-invalid @enderror" name="meta_desc[{{ $lang->code }}]">{{ old('meta_desc.'.$lang->code) ?? $product->meta_desc[$lang->code] ?? null }}</textarea>
+                                                                @error('meta_desc.'.$lang->code)
+                                                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-2">
+                                                                <label for="meta_keywords" class="form-label">Meta ключи</label>
+                                                            </div>
+                                                            <div class="col-10">
+                                                                <textarea id="meta_keywords" cols="4" rows="4" class="form-control @error('meta_keywords.'.$lang->code) is-invalid @enderror" name="meta_keywords[{{ $lang->code }}]">{{ old('meta_keywords.'.$lang->code) ?? $product->meta_keywords[$lang->code] ?? null }}</textarea>
+                                                                @error('meta_keywords.'.$lang->code)
+                                                                <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     @endforeach
@@ -182,9 +265,50 @@
                         </div>
                     </div>
                 </div>
+{{--                <div class="card">--}}
+{{--                    <div class="card-header">--}}
+{{--                        <h2 class="mb-0">SEO данные</h2>--}}
+{{--                    </div>--}}
+{{--                    <div class="card-body">--}}
+{{--                        <div class="row">--}}
+{{--                            <div class="col-12">--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-2">--}}
+{{--                                            <label for="meta_desc" class="form-label">Meta Описание</label>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-10">--}}
+{{--                                            <textarea id="meta_desc" cols="4" rows="4" class="form-control @error('meta_desc.'.$lang->code) is-invalid @enderror" name="meta_desc[{{ $lang->code }}]">{{ old('meta_desc.'.$lang->code) ?? $product->meta_desc[$lang->code] ?? null }}</textarea>--}}
+{{--                                            @error('meta_desc.'.$lang->code)--}}
+{{--                                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                <strong>{{ $message }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                            @enderror--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="form-group">--}}
+{{--                                    <div class="row">--}}
+{{--                                        <div class="col-2">--}}
+{{--                                            <label for="meta_keywords" class="form-label">Meta ключи</label>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-10">--}}
+{{--                                            <textarea id="meta_keywords" cols="4" rows="4" class="form-control @error('meta_keywords.'.$lang->code) is-invalid @enderror" name="meta_keywords[{{ $lang->code }}]">{{ old('meta_keywords.'.$lang->code) ?? $product->meta_keywords[$lang->code] ?? null }}</textarea>--}}
+{{--                                            @error('meta_keywords.'.$lang->code)--}}
+{{--                                            <span class="invalid-feedback" role="alert">--}}
+{{--                                                <strong>{{ $message }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                            @enderror--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="card">
                     <div class="card-header">
-                        <h2 class="mb-0">SEO данные</h2>
+                        <h2 class="mb-0">Карта</h2>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -192,11 +316,11 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-2">
-                                            <label for="meta_desc" class="form-label">Meta Описание</label>
+                                            <label for="map" class="form-label">Карта</label>
                                         </div>
                                         <div class="col-10">
-                                            <textarea id="meta_desc" cols="4" rows="4" class="form-control @error('meta_desc.'.$lang->code) is-invalid @enderror" name="meta_desc[{{ $lang->code }}]">{{ old('meta_desc.'.$lang->code) ?? $product->meta_desc[$lang->code] ?? null }}</textarea>
-                                            @error('meta_desc.'.$lang->code)
+                                            <textarea id="map" cols="4" rows="4" class="form-control @error('map.'.$lang->code) is-invalid @enderror" name="map">{{ old('map') ?? null }}</textarea>
+                                            @error('map.'.$lang->code)
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -205,20 +329,33 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <div class="form-check">
+                                        <!-- Agar tanlanmasa ham 0 yuboriladi -->
+                                        <input type="hidden" name="info" value="0">
+
+                                        <!-- Agar tanlansa 1 yuboriladi -->
+                                        <input class="form-check-input" type="checkbox"
+                                               name="info" value="1" id="invalidCheck3">
+
+                                        <label class="form-check-label" for="invalidCheck3">
+                                            Лучший тур
+                                        </label>
+
+                                        <div class="invalid-feedback"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <div class="row">
                                         <div class="col-2">
-                                            <label for="meta_keywords" class="form-label">Meta ключи</label>
+                                            <label for="menu_id" class="form-label">Цена</label>
                                         </div>
                                         <div class="col-10">
-                                            <textarea id="meta_keywords" cols="4" rows="4" class="form-control @error('meta_keywords.'.$lang->code) is-invalid @enderror" name="meta_keywords[{{ $lang->code }}]">{{ old('meta_keywords.'.$lang->code) ?? $product->meta_keywords[$lang->code] ?? null }}</textarea>
-                                            @error('meta_keywords.'.$lang->code)
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+                                            <input type="text" class="form-control mb-3" placeholder="$0.00" name="price" data-inputmask="'alias': 'currency', 'numericInput': 'true', 'prefix': '$'" inputmode="decimal">
+
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -232,7 +369,6 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-2">
@@ -240,8 +376,8 @@
                                         </div>
                                         <div class="col-10">
                                             <select class="form-control  is-invalid "  name="status">
-                                                <option value="1">Active</option>
-                                                <option value="0">NeActive</option>
+                                                <option value="1">Uzbekistan Tours</option>
+                                                <option value="0">International</option>
                                             </select>
                                             @error('categories')
                                             <span class="invalid-feedback" role="alert">
@@ -251,6 +387,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-2">
@@ -264,6 +401,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
             <div class="model-btns d-flex justify-content-end mb-5">

@@ -68,9 +68,9 @@
                             </td>
                             <td>
                                 @if($item->status == 1)
-                                    <span style="color: green; font-weight: bold;">Active</span>
+                                    <span >Uzbekistan Tours</span>
                                 @else
-                                    <span style="color: red; font-weight: bold;">Inactive</span>
+                                    <span >International</span>
                                 @endif
                             </td>
                             <td style="width: 200px">

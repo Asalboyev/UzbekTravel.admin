@@ -19,6 +19,10 @@ class Product extends Model
         'info',
         'brand_id',
         'meta_keywords',
+        'date',
+        'map',
+        'groupsize',
+        'language',
         'meta_desc',
         'slug'
     ];
@@ -27,9 +31,16 @@ class Product extends Model
         'title' => 'array',
         'desc' => 'array',
         'info' => 'array',
+        'date' => 'array',
+        'groupsize' => 'array',
+        'language' => 'array',
         'meta_keywords' => 'array',
         'meta_desc' => 'array'
     ];
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class);
+    }
 
     public function brand()
     {

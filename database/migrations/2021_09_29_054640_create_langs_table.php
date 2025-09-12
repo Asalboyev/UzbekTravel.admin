@@ -24,8 +24,8 @@ class CreateLangsTable extends Migration
         });
 
         DB::table('langs')->insert([
-          'code' => 'en',
-          'title' => 'English',
+          'code' => 'uz',
+          'title' => 'Uzbek',
           'is_main' => true
         ]);
 

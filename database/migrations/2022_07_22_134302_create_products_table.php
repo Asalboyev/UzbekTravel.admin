@@ -26,6 +26,11 @@ class CreateProductsTable extends Migration
             $table->text('meta_desc')->nullable();
             $table->string('slug');
             $table->string('status');
+            $table->text('date')->nullable();
+            $table->text('groupsize')->nullable();
+            $table->text('language')->nullable();
+            $table->text('map')->nullable();
+
             $table->timestamps();
         });
     }
