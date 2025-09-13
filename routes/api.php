@@ -20,16 +20,16 @@ use App\Http\Controllers\Api\ApiController;
 
 
 Route::middleware('locale')->group(function () {
-    Route::get('/posts', [ApiController::class, 'get_posts']);
-    Route::get('/posts/{slug}', [ApiController::class, 'show_post']);
+    Route::get('/news', [ApiController::class, 'get_posts']);
+    Route::get('/news/{slug}', [ApiController::class, 'show_post']);
 
     Route::get('/categories', [ApiController::class, 'get_categories']);
     Route::get('/categories/{slug}', [ApiController::class, 'show_categories']);
     Route::get('/categories/filter/{slug}', [ApiController::class, 'show_categor_product']);
 
 
-    Route::get('/documents', [ApiController::class, 'get_documents']);
-    Route::get('/documents/{slug}', [ApiController::class, 'show_documents']);
+    Route::get('/tours', [ApiController::class, 'get_tours']);
+    Route::get('/tours/{slug}', [ApiController::class, 'show_tour']);
     Route::get('/documents/filter/{slug}', [ApiController::class, 'show_category_documents']);
     Route::get('/document/{slug}', [ApiController::class, 'show_document']);
 
@@ -51,6 +51,8 @@ Route::middleware('locale')->group(function () {
     Route::get('/works', [ApiController::class, 'get_catalogs']);
     Route::get('/works/{slug}', [ApiController::class, 'show_catalogs']);
 
+    Route::get('/faq', [ApiController::class, 'get_faq']);
+    Route::get('/feedbacks', [ApiController::class, 'feedbacks']);
     Route::get('/banners', [ApiController::class, 'get_banner']);
     Route::get('/langs', [ApiController::class, 'langs']);
 

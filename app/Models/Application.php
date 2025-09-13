@@ -16,6 +16,7 @@ class Application extends Model
         'message',
         'type',
         'page',
-        'company'
+        'company',
+        'product_id'
     ];
 }

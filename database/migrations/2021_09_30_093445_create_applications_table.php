@@ -21,8 +21,10 @@ class CreateApplicationsTable extends Migration
             $table->text('phone_number')->nullable();
             $table->text('message')->nullable();
             $table->string('page')->nullable();
+            $table->string('product_id')->nullable();
             $table->timestamps();
-        });    }
+        });
+    }
 
     /**
      * Reverse the migrations.

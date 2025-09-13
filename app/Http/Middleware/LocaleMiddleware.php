@@ -9,7 +9,7 @@ use App\Models\Lang;
 class LocaleMiddleware
 {
     // Asosiy til
-    protected static $mainLanguage = 'en';
+    protected static $mainLanguage = 'uz';
 
     // Tillar ro'yxati
     protected static $languages = [];

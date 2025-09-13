@@ -16,8 +16,8 @@ class CreateFeedbackTable extends Migration
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
             $table->text('name')->nullable();
-            $table->foreignId('product_id')->nullable();
-            $table->string('logo')->nullable();
+            $table->string('product_id')->nullable();
+            $table->string('img')->nullable();
             $table->text('position')->nullable();
             $table->text('feedback');
             $table->string('video')->nullable();
