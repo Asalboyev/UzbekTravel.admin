@@ -1019,11 +1019,35 @@ class ApiController extends Controller
         return response()->json($translatedCategory);
     }
 
-    public function get_tours()
+
+    public function get_tours(Request $request)
     {
         $locale = App::getLocale();
 
-        $categories = Product::latest()->paginate(500);
+        $query = Product::query();
+
+        // status bo‘yicha filter
+        if ($request->has('status')) {
+            $query->where('status', $request->status);
+        }
+
+        // info bo‘yicha filter (masalan 1 bo‘lsa)
+        if ($request->has('info')) {
+            $query->where('info', $request->info);
+        }
+
+        // narx sortlash
+        if ($request->has('price_sort')) {
+            if ($request->price_sort === 'asc') {
+                $query->orderBy('price', 'asc'); // pastdan tepaga
+            } elseif ($request->price_sort === 'desc') {
+                $query->orderBy('price', 'desc'); // tepadan pastga
+            }
+        } else {
+            $query->latest(); // default
+        }
+
+        $categories = $query->paginate(500);
 
         if ($categories->isEmpty()) {
             return response()->json([
@@ -1031,7 +1055,7 @@ class ApiController extends Controller
             ], 404);
         }
 
-        $mapCategory = function ($category) use ($locale, &$mapCategory) {
+        $mapCategory = function ($category) use ($locale) {
             return [
                 'id' => $category->id,
                 'title' => $category->title[$locale] ?? null,
@@ -1446,8 +1470,7 @@ class ApiController extends Controller
             . "👤 Ism: {$application->name}\n"
             . "📧 Email: {$application->email}\n"
             . "📱 Telefon: {$application->phone_number}\n"
-            . "🏢 Kompaniya: {$application->company}\n"
-            . "📦 Mahsulot: " . ($productName ?? '-') . "\n"
+            . "📦 Tur: " . ($productName ?? '-') . "\n"
             . "✉️ Xabar: {$application->message}";
 
         try {
