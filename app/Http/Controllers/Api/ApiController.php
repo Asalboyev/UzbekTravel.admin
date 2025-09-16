@@ -1019,6 +1019,57 @@ class ApiController extends Controller
         return response()->json($translatedCategory);
     }
 
+//    public function get_tours()
+//    {
+//        $locale = App::getLocale();
+//
+//        $categories = Product::latest()->paginate(500);
+//
+//        if ($categories->isEmpty()) {
+//            return response()->json([
+//                'message' => 'No records found'
+//            ], 404);
+//        }
+//
+//        $mapCategory = function ($category) use ($locale, &$mapCategory) {
+//            return [
+//                'id' => $category->id,
+//                'title' => $category->title[$locale] ?? null,
+//                'desc' => $category->desc[$locale] ?? null,
+//                'info' => $category->info ?? null,
+//                'date' => $category->date[$locale] ?? null,
+//                'groupsize' => $category->groupsize[$locale] ?? null,
+//                'language' => $category->language[$locale] ?? null,
+//                'meta_keywords' => $category->meta_keywords[$locale] ?? null,
+//                'meta_desc' => $category->meta_desc[$locale] ?? null,
+//                'views_count' => $category->views_count,
+//                'price' => $category->price,
+//                'status' => $category->status,
+//                'map' => $category->map,
+//                'slug' => $category->slug,
+//                'images' => $category->productImages->map(function ($image) {
+//                    return [
+//                        'lg' => $image->lg_img ?? null,
+//                        'md' => $image->md_img ?? null,
+//                        'sm' => $image->sm_img ?? null,
+//                    ];
+//                }),
+//            ];
+//        };
+//
+//        $translatedPosts = collect($categories->items())->map(fn($category) => $mapCategory($category));
+//
+//        return response()->json([
+//            'data' => $translatedPosts,
+//            'total' => $categories->total(),
+//            'per_page' => $categories->perPage(),
+//            'current_page' => $categories->currentPage(),
+//            'last_page' => $categories->lastPage(),
+//            'next_page_url' => $categories->nextPageUrl(),
+//            'prev_page_url' => $categories->previousPageUrl(),
+//        ]);
+//    }
+
 
     public function get_tours(Request $request)
     {
@@ -1031,20 +1082,25 @@ class ApiController extends Controller
             $query->where('status', $request->status);
         }
 
-        // info bo‘yicha filter (masalan 1 bo‘lsa)
+        // info bo‘yicha filter
         if ($request->has('info')) {
             $query->where('info', $request->info);
+        }
+
+        // title bo‘yicha qidiruv
+        if ($request->has('title')) {
+            $query->where("title->$locale", 'like', '%' . $request->title . '%');
         }
 
         // narx sortlash
         if ($request->has('price_sort')) {
             if ($request->price_sort === 'asc') {
-                $query->orderBy('price', 'asc'); // pastdan tepaga
+                $query->orderBy('price', 'asc');
             } elseif ($request->price_sort === 'desc') {
-                $query->orderBy('price', 'desc'); // tepadan pastga
+                $query->orderBy('price', 'desc');
             }
         } else {
-            $query->latest(); // default
+            $query->latest();
         }
 
         $categories = $query->paginate(500);
