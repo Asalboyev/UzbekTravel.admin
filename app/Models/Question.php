@@ -15,6 +15,7 @@ class Question extends Model
     ];
 
     protected $casts = [
-        'question' => 'array'
+        'question' => 'array',
+        'answer' => 'array',
     ];
 }

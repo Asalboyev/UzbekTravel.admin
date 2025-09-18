@@ -68,18 +68,20 @@
                                             </span>
                                             @enderror
                                         </div>
+                                        <div class="form-group">
+                                            <label for="desc" class="form-label">Answer</label>
+                                            <textarea name="answer[{{ $lang->code }}]" id="answer" cols="30" rows="10" class="form-control @error('answer.'.$lang->code) is-invalid @enderror ckeditor" name="answer[{{ $lang->code }}]" placeholder="Answer...">{{ old('desc.'.$lang->code) }}</textarea>
+
+                                            {{--                                                <textarea name="desc[{{ $lang->code }}]" id="editor_{{ $lang->code }}" cols="30" rows="10" class="form-control @error('desc.'.$lang->code) is-invalid @enderror " name="desc[{{ $lang->code }}]" placeholder="Описание...">{{ old('desc.'.$lang->code) }}</textarea>--}}
+                                            @error('answer.'.$lang->code)
+                                            <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
 
                                     </div>
                                     @endforeach
-                                        <div class="form-group">
-                                            <label for="answer" class="form-label required">URL-адрес</label>
-                                            <input type="text"  class="form-control @error('answer') is-invalid @enderror" name="answer" value="{{ old('answer') }}" id="answer" placeholder="URL-адрес...">
-                                            @error('answer')
-                                            <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                            @enderror
-                                        </div>
 
                                 </div>
                             </div>

@@ -59,7 +59,7 @@
                         <tr>
                             <th scope="row" style="width: 100px">{{ $questions->firstItem() + $key }}</th>
                             <td>{{ $item->question[$main_lang->code] }}</td>
-                            <td>{{ $item->answer }}</td>
+                            <td>{!!  $item->answer[$main_lang->code] !!}</td>
                             <td style="width: 200px">
                                 <div class="d-flex justify-content-end">
                                     <a href="{{ route($route_name.'.edit', [$route_parameter => $item]) }}" class="btn btn-sm btn-info"><i class="fe fe-edit-2"></i></a>

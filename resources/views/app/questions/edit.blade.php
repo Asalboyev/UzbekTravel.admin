@@ -146,17 +146,17 @@
                                             </span>
                                             @enderror
                                         </div>
-                                    </div>
-                                    @endforeach
-                                        <div class="form-group">
-                                            <label for="title" class="form-label required">URL-адрес</label>
-                                            <input type="text"  class="form-control @error('answer') is-invalid @enderror" name="answer" value="{{ old('answer') ?? $question->answer }}" id="answer" placeholder="URL-адрес...">
-                                            @error('answer')
+                                        <div class="form-group editor">
+                                            <label for="answer" class="form-label ckeditor">Answer</label>
+                                            <textarea name="answer[{{ $lang->code }}]"  cols="30" rows="10" class="form-control ckeditor @error('answer.'.$lang->code) is-invalid @enderror" placeholder="Answer..."> {{ old('answer.'.$lang->code) ?? $question->answer[$lang->code] ?? '' }} </textarea>   @error('answer.'.$lang->code)
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                             @enderror
                                         </div>
+
+                                    </div>
+                                    @endforeach
 
                                 </div>
                             </div>
